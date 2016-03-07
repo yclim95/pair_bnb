@@ -1,28 +1,64 @@
-<div id="clearance" class="sign-up">
-  <h2><%= t(".title") %></h2>
-
-  <%= form_for @user do |form| %>
-    <div class="name-field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+  <div class="omb_login">
+      <h3 class="omb_authTitle">Sign Up or
+        <%= link_to "Log In", sign_in_path %>
+      </h3>
+    <div class="row omb_row-sm-offset-3 omb_socialButtons">
+          <div class="col-xs-4 col-sm-2">
+            <a href="#" class="btn btn-lg btn-block omb_btn-facebook">
+              <i class="fa fa-facebook visible-xs"></i>
+              <span class="hidden-xs">Facebook</span>
+            </a>
+          </div>
+          <div class="col-xs-4 col-sm-2">
+            <a href="#" class="btn btn-lg btn-block omb_btn-twitter">
+              <i class="fa fa-twitter visible-xs"></i>
+              <span class="hidden-xs">Twitter</span>
+            </a>
+          </div>  
+          <div class="col-xs-4 col-sm-2">
+            <a href="#" class="btn btn-lg btn-block omb_btn-google">
+              <i class="fa fa-google-plus visible-xs"></i>
+              <span class="hidden-xs">Google+</span>
+            </a>
+          </div>  
     </div>
 
-    <div class="text-field">
-    <%= form.label :email %>
-    <%= form.text_field :email, type: 'email' %>
+    <div class="row omb_row-sm-offset-3 omb_loginOr">
+      <div class="col-xs-12 col-sm-6">
+        <hr class="omb_hrOr">
+        <span class="omb_spanOr">or</span>
+      </div>
     </div>
 
-    <div class="password-field">
-    <%= form.label :password %>
-    <%= form.password_field :password %>
+    <div class="row omb_row-sm-offset-3">
+      <div class="col-xs-12 col-sm-6">  
+         <%= form_for @users, :html => {:class => "omb_loginForm"} , url: user_sign_up_path do |form| %>
+
+         <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-user"></i>
+            </span>
+            <%= form.text_field :name, class: "form-control", placeholder:"Full Name"%>
+          </div>
+           <span class="help-block"></span>
+
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-envelope"></i>
+            </span>
+            <%= form.text_field :email, type: 'email', class: "form-control", placeholder:"Email"%>
+          </div>
+
+          <span class="help-block"></span>
+                    
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+            <%= form.text_field :password, type: 'password', class: "form-control", placeholder: "Password"%>
+          </div>
+                    <span class="help-block">Password error</span>
+
+          <%= form.submit "Submit", class: "btn btn-lg btn-primary btn-block"%>
+        <% end %>
+      </div>
     </div>
 
-    <div class="submit-field">
-      <%= form.submit %>
-    </div>
-
-    <div class="other-links">
-      <%= link_to t(".sign_in"), sign_in_path %>
-    </div>
-  <% end %>
-</div>
+   
+  </div>

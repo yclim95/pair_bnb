@@ -3,24 +3,13 @@
 <head>
   <title>MYB2B</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'sign_up', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <%= render "partials/header" %>
-  <div id="header">
-    <% if signed_in? -%>
-      <p>DEAR <%= current_user.name %></p>
-      <%= button_to t(".sign_out"), sign_out_path, method: :delete %>
-    <% else %>
-      <%= button_to  "Sign In", sign_in_path , :method => :get %>
-    <% end %>
-  </div>
-
-  <br>
-  <div class="container-fluid">
-    <% if !flash.empty? %>
+   <div class="container">
+     <% if !flash.empty? %>
       <% flash.each do |key, value|%>
         <% if value.nil? %>
         <% else %>
@@ -39,8 +28,10 @@
         <% end %>
       <% end %>
     <% end %> 
-  </div>
-
   <%= yield %>
+  
+
+</div>
+
 </body>
 </html>

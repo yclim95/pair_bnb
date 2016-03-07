@@ -11,7 +11,6 @@ class User < ActiveRecord::Base
     create! do |u|
       u.name = auth_hash["info"]["name"]
       u.email = auth_hash["extra"]["raw_info"]["email"]
-      byebug
       u.authentications<<(authentication)
       u.password = "123456"
       u.save

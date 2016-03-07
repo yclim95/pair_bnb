@@ -1,5 +1,5 @@
 class SessionClearancesController < Clearance::SessionsController
-  layout "sign_in"
+  layout "sign_up"
 
   def new
     @user = User.new 
