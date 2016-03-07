@@ -1,6 +1,6 @@
 # README
 
-## 1.0 Simple User's blog posts with categories : 
+## 1.0 Simple user online reservations : 
 
 1) Languages included:
 
