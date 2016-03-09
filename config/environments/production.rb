@@ -8,7 +8,7 @@ config.action_mailer.perform_deliveries = true
       :port                 => 587,
       :domain               => "gmail.com",
       :user_name            => ENV["pusher_user_name"],
-      :password             => "ilike2swim",
+      :password             => ENV["pusher_password"],
       :authentication       => :plain,
       :enable_starttls_auto => true
 }
